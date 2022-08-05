@@ -22,12 +22,5 @@ app.listen(3000, async () =>{
     console.log('MongoDB connected successfully');
     console.log("Server running...");
 
-    //Create user
-    // let user =await User.create({
-    //     email:"dibyaNayak@gmail.com",
-    //     password:324145,
-    //     username:"Dibya Nayak"
-    // })
-
-    // console.log(user)
+    
 })
