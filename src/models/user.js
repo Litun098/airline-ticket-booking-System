@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({
     email:{
         type: String,
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
 // pre- save is a trigger that gets a function and execute it before a user object
 userSchema.pre('save',async function ancryptPassword(next){
     const user = this;
-    const hash = await bctrypt.hash(this.password, 10);
+    const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
     next();
 
