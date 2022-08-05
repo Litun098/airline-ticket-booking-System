@@ -9,11 +9,10 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         require:true
-    },
-    username:{
-        type:String,
-        required:true
-    }    
+    }//,
+    // username:{
+    //     type:String
+    // }    
 
 
 },{timestamps:true})
@@ -30,7 +29,7 @@ userSchema.pre('save',async function ancryptPassword(next){
 
 userSchema.methods.isValidPassword = async function checkValidity(password){
     const user = this;
-    const compare = await bctrypt.compare(password,user.password);
+    const compare = await bcrypt.compare(password,user.password);
     return compare;
 }
 
