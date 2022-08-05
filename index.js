@@ -1,6 +1,9 @@
 const express = require('express');
-const app = express();
 const apiRouter = require('./src/routes/index.js');
+const {connect} = require('./src/config/database'); 
+const User = require('./src/models/user')
+const app = express();
+
 
 app.use('/api',apiRouter);
 
@@ -13,6 +16,18 @@ app.get('/', (req,res)=>{
     })
 })
 
-app.listen(3000, () =>{
+
+app.listen(3000, async () =>{
+    await connect();
+    console.log('MongoDB connected successfully');
     console.log("Server running...");
+
+    //Create user
+    // let user =await User.create({
+    //     email:"dibyaNayak@gmail.com",
+    //     password:324145,
+    //     username:"Dibya Nayak"
+    // })
+
+    // console.log(user)
 })
