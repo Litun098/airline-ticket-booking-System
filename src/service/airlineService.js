@@ -31,9 +31,9 @@ const getAirline = async (name) =>{
     }
 }
 
-const getAllAirline = async (flightNumber) =>{
+const getAllAirlines = async () =>{
     try{
-        const response = await Airline.find({flightNumber:flightNumber});
+        const response = await Airline.find();
         return response;
     }catch(err){
         console.log(err)
@@ -44,5 +44,5 @@ module.exports = {
     createAirline,
     destroyAirline,
     getAirline,
-    getAllAirline
+    getAllAirlines
 }

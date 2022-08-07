@@ -48,9 +48,9 @@ const getFlight = async (flightNumber) =>{
     }
 }
 
-const getAllFlight = async (flightNumber) =>{
+const getAllFlight = async () =>{
     try{
-        const response = await Flight.find({flightNumber:flightNumber});
+        const response = await Flight.find();
         return response;
     }catch(err){
         console.log(err)
