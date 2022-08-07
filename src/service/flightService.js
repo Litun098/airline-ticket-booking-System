@@ -6,7 +6,7 @@ const createFlight = async (data) =>{
             departureAirport: data.departureAirport,
             arrivalAirport: data.arrivalAirport,
             duration: data.duration,
-            flightDate: data.flightDate,
+            // flightDate: data.flightDate,
             departureTime: data.departureTime,
             arrivalTime: data.arrivalTime,
             flightNumber: data.flightNumber,
