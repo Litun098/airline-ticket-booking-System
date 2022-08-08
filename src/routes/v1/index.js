@@ -5,6 +5,7 @@ const router = express.Router();
 const helpController = require('../../controllers/helpController');
 const airlineController = require('../../controllers/airlineController')
 const flightController = require('../../controllers/flightController')
+const reviewController = require('../../controllers/reviewController')
 
 
 router.get('/help',helpController.helpDetails);
@@ -19,6 +20,11 @@ router.get('/flight/:flightNumber',flightController.getFlight)
 router.get('/flight',flightController.getAllFlight)
 router.delete('/flight/',flightController.destroyFlight)
 
+
+router.post('/review',reviewController.createReview)
+router.get('/review/:flightId/:userId',reviewController.getReview)
+router.get('/review',reviewController.getAllReview)
+router.delete('/review/:flightId',reviewController.destroyReview)
 
 
 module.exports = router;
