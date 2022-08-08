@@ -6,7 +6,7 @@ const bookingSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
-    airline:{
+    flight:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:'Flight'
