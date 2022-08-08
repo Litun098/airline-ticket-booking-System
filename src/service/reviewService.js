@@ -5,7 +5,7 @@ const createReview = async (data) =>{
         const newReview = {
             comment:data.comment,
             user:data.userId,
-            flight:data.flightId
+            flight:data.fl
         }
         const response = await new Review(newReview).save();
 
@@ -35,7 +35,7 @@ const getReview = async (user,flight) =>{
 
 const getAllReview = async (flight) =>{
     try{
-        const response = await Review.find({flight:flight});
+        const response = await Review.find();
         return response;
     }catch(err){
         console.log(err)
