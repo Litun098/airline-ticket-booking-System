@@ -5,7 +5,7 @@ const createReview = async (data) =>{
         const newReview = {
             comment:data.comment,
             user:data.userId,
-            flight:data.fl
+            flight:data.flight
         }
         const response = await new Review(newReview).save();
 
