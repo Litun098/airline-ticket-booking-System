@@ -41,7 +41,7 @@ After Login a Token will be generate which will be used for authenticate the use
 
 | headers | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `TOP_SECRET` | `string` | **Required**. Email|
+| `TOP_SECRET` | `string` | **Required**. token|
 
 
 
